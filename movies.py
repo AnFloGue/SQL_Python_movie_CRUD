@@ -18,11 +18,14 @@ def prompt_add_movie():
 
 
 def print_movie_list(title, movies):
+    
     print(f"-- {title} movies --")
+    
     for movie in movies:
         name, genre, movie_date = movie
+        
         if isinstance(movie_date, str):
-            # Assuming the date is in the format 'MMM dd YYYY'
+            # We assume the date is in the format 'MMM dd YYYY'
             movie_date = datetime.datetime.strptime(movie_date, '%b %d %Y').timestamp()
         movie_date = datetime.datetime.fromtimestamp(movie_date)
         print(f"{name} ({genre}) - {movie_date.strftime('%b %d %Y')}")
