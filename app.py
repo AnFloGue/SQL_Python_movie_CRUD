@@ -8,6 +8,7 @@ from movies import (
     prompt_search_movies
 )
 
+
 menu = """Please select one of the following options:
 1) Add new movie.
 2) View upcoming movies.
