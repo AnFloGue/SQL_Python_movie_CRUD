@@ -1,3 +1,7 @@
+___
+![SQL Logo](https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png)
+___
+
 # Movies Watch List
 
 This project is a simple command-line application for managing a list of movies. Users can add movies, view upcoming movies, mark movies as watched, and search for movies. The application uses SQLite for data storage.
