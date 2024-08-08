@@ -1,114 +1,91 @@
+# Movies Watch List
 
-___
-![Google Logo](https://static.djangoproject.com/img/logos/django-logo-negative.png)
+This project is a simple command-line application for managing a list of movies. Users can add movies, view upcoming movies, mark movies as watched, and search for movies. The application uses SQLite for data storage.
 
+## Features
 
-___
+- Add new movies with a title and release date.
+- View all movies.
+- View upcoming movies (movies that have not been released yet).
+- Mark movies as watched.
+- View watched movies.
+- Add users to the app.
+- Search for movies by title.
 
-# Django Project Template
-<br>
+## Requirements
 
-___
+- Python 3.x
+- SQLite
 
+## Setup
 
-### Installation
-1. If required, remove the existing virtual environment, run the following command:
-    ```bash
-    rm -rf env
+1. Clone the repository:
+    ```sh
+    git clone REPOSITORY_URL
+    cd <repository-directory>
     ```
-
-    ```bash
-    sudo rm -rf env
-    ```
-
-2. Create a new virtual environment and activate it:
-    ```bash
-    python3 -m venv env
-    source env/bin/activate
-    ```
-
-3. Install the dependencies:
-    ```bash
+2. Install the required dependencies:
+    ```sh
     pip install -r requirements.txt
-    ```            
-   
-4. if any package has been installed, refresh (update) the dependencies document:
-    ```bash
-    pip freeze > requirements.txt
+    ```
+3. Run the application:
+    ```sh
+    python app.py
     ```
 
-### Running the Local Server
-Start the development server:
+## Usage
 
- ```bash
- python manage.py runserver
- ```
+When you run the application, you will be presented with a menu of options:
 
-   This will launch the Django local server panel at 
-   
-<http://127.0.0.1:8000>
+## Menu Options
 
-   This will launch the Django admin panel at 
-   
-<http://127.0.0.1:8000/admin/>
+### Adding a New Movie
 
+1. Select option 1.
+2. Enter the movie title.
+3. Enter the release date in the format `dd-mm-YYYY`.
 
-### Creating Models
-1. Models define the data structure for your application. 
-2. Create your models in the `models.py` of each app.
+### Viewing Upcoming Movies
 
-3. Register your models in the admin panel by adding them to the `admin.py` file in the same directory. e.g.
-    ```python
-    from django.contrib import admin
-    from .models import Model_01, Model_02, Model_03, Model_etc
+1. Select option 2.
 
-    admin.site.register(Model_01)
-    admin.site.register(Model_02)
-    admin.site.register(Model_03)
-    admin.site.register(Model_etc)
-    ```
+### Viewing All Movies
 
-### Applying Database Changes
-1. Create migrations:
-    ```bash
-    python manage.py makemigrations
-    ```
+1. Select option 3.
 
-2. Apply migrations:
-    ```bash
-    python manage.py migrate
-    ```
+### Marking a Movie as Watched
 
-### Show Migrations Status 
-1. this command will show the migrations status:
-    ```bash
-    python manage.py showmigrations
-    ```
+1. Select option 4.
+2. Enter the username.
+3. Enter the movie ID to mark it as watched.
 
-### Rollback Migration 
-1. this command will rollback the migrations:
-    ```bash
-    python manage.py migrate <app_name> <migration_name>
-    ```      
-   or to rollback all migrations:
-    ```bash
-    python manage.py migrate <app_name> zero
-    ```
+### Viewing Watched Movies
 
-### Creating an Admin User
-1. Create a superuser:
-    ```bash
-    python manage.py createsuperuser
-    ```
+1. Select option 5.
+2. Enter the username to view the watched movies.
 
-### Run Local Server 
-1. Start the development server:
-    ```bash
-    python manage.py runserver
-    ```
+### Adding a User
 
-### Admin Panel
-1. Access the admin panel at:
+1. Select option 6.
+2. Enter the username.
 
-    <http://127.0.0.1:8000/admin/>
-    ```
+### Searching for a Movie
+
+1. Select option 7.
+2. Enter a partial movie title to search for.
+
+### Exiting the Application
+
+1. Select option 8 to exit the application.
+
+## Database Schema
+
+The application uses an SQLite database with the following tables:
+
+- `movies`: Stores movie information (id, title, release_timestamp).
+- `users`: Stores user information (username).
+- `watched`: Stores information about watched movies (user_username, movie_id).
+
+## License
+
+This project is licensed under the MIT License.
