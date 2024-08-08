@@ -19,7 +19,7 @@ def prompt_add_movie():
 
 def print_movie_list(title, movies):
     
-    print(f"-- {title} movies --")
+    print(f"-- These are {title} movies --")
     
     for movie in movies:
         name, genre, movie_date = movie
@@ -31,7 +31,15 @@ def print_movie_list(title, movies):
         print(f"{name} ({genre}) - {movie_date.strftime('%b %d %Y')}")
 
 
-def prompt_watch_movie():
+def prompt_watch_movie(movies):
+    if not movies:
+        print("No movies available.")
+        return
+    
+    print("-- Add watched movie --")
+    for movie in movies:
+        movie_id, title, _ = movie
+        print(f"{movie_id}: {title}")
     username = input("Username: ")
     movie_id = input("Movie ID: ")
     database.watch_movie(username, movie_id)

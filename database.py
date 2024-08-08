@@ -67,7 +67,6 @@ def get_movies(upcoming=False):
             cursor.execute(SELECT_UPCOMING_MOVIES, (today_timestamp,))
         else:
             cursor.execute(SELECT_ALL_MOVIES)
-            print(cursor.description)
         return cursor.fetchall()
 
 

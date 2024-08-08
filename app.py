@@ -36,7 +36,8 @@ while (user_input := input(menu)) != "8":
         movies = database.get_movies()
         print_movie_list("All", movies)
     elif user_input == "4":
-        prompt_watch_movie()
+        movies = database.get_movies()
+        prompt_watch_movie(movies)
     elif user_input == "5":
         movies = prompt_get_watched_movies()
         if movies:
