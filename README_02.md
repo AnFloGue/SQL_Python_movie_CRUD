@@ -16,7 +16,6 @@ This project is a simple command-line application for managing a list of movies.
 
 - Python 3.x
 - SQLite
-
 ## Setup
 
 1. Clone the repository:
